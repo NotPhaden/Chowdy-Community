@@ -1,4 +1,5 @@
- <meta charset="UTF-8">
+<head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CHOWDY - Community Hub</title>
   <link rel="icon" type="image/png" href="logo.png">
@@ -13,7 +14,6 @@
       text-align: center;
       overflow-x: hidden;
     }
-
 
     body::before {
       content: "";
@@ -46,8 +46,27 @@
 
     h1 {
       font-size: 2.5rem;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       text-shadow: 0 0 10px #9b59b6, 0 0 20px #8e44ad;
+    }
+
+    .special-text {
+      display: inline-block;
+      border: 2px solid #9b59b6;
+      padding: 12px 18px;
+      margin: 10px 0 30px 0;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      color: #fff;
+      background: rgba(155, 89, 182, 0.08);
+      text-shadow: 0 0 8px #9b59b6;
+      box-shadow: 0 0 12px rgba(155, 89, 182, 0.3);
+      animation: soft-glow 4s infinite alternate;
+    }
+
+    @keyframes soft-glow {
+      from { box-shadow: 0 0 10px rgba(155, 89, 182, 0.3); }
+      to   { box-shadow: 0 0 25px rgba(155, 89, 182, 0.7); }
     }
 
     .link {
@@ -84,7 +103,7 @@
     }
 
     footer {
-      margin-top: 50px;
+      margin-top: 20px;
       font-size: 0.9rem;
       color: #888;
     }
@@ -95,11 +114,15 @@
     <div class="logo">
       <img src="logo.png" alt="CHOWDY Logo">
     </div>
+
     <h1>CHOWDY Community Hub</h1>
+    <div class="special-text">🔑 Cod referal: <strong>945</strong></div>
 
     <a class="link" href="https://www.tipeeestream.com/chowdy61/donation" target="_blank">💖 Sustinere Aici</a>
     <a class="link" href="https://discord.gg/kEesdTmH5s" target="_blank">💬 Discord</a>
     <a class="link" href="https://www.tiktok.com/@chowdy001" target="_blank">🎵 TikTok</a>
+
+    <div class="special-text">🛍️ Cod Chowdy pe Shop</div>
 
     <footer>
       © 2025 CHOWDY - Toate drepturile rezervate
@@ -107,5 +130,3 @@
   </div>
 </body>
 </html>
-
-
