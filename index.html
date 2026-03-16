@@ -1,155 +1,221 @@
-<html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CHOWDY - Community Hub</title>
-  <link rel="icon" type="image/png" href="logo.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHOWDY Community Hub</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" href="logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    body {
-      margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      background: radial-gradient(circle at top, #1a0b2e, #000);
-      color: #b889ff;
-      text-align: center;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
+body{
+font-family:'Inter',sans-serif;
+background:#080808;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+color:white;
+position:relative;
+overflow:hidden;
+}
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: radial-gradient(circle, rgba(155,89,182,0.25), transparent 70%);
-      animation: pulse 6s infinite alternate;
-      z-index: -1;
-    }
 
-    @keyframes pulse {
-      from { opacity: 0.7; }
-      to { opacity: 0.3; }
-    }
+body::before{
+content:'';
+position:fixed;
+width:650px;
+height:650px;
+background:radial-gradient(circle, rgba(155,89,182,0.14), transparent 70%);
+top:-220px;
+right:-220px;
+filter:blur(90px);
+z-index:-1;
+animation:float1 8s ease-in-out infinite alternate;
+}
 
-    .container {
-      max-width: 500px;
-      margin: auto;
-      padding: 40px 20px;
-    }
+body::after{
+content:'';
+position:fixed;
+width:550px;
+height:550px;
+background:radial-gradient(circle, rgba(120,60,180,0.10), transparent 70%);
+bottom:-220px;
+left:-220px;
+filter:blur(110px);
+z-index:-1;
+animation:float2 10s ease-in-out infinite alternate;
+}
 
-    .logo img {
-      width: 180px;
-      margin-bottom: 25px;
-      filter: drop-shadow(0 0 25px #9b59b6);
-      animation: logoFloat 4s ease-in-out infinite;
-    }
+@keyframes float1{
+from{transform:translateY(0);}
+to{transform:translateY(30px);}
+}
 
-    @keyframes logoFloat {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-      100% { transform: translateY(0); }
-    }
+@keyframes float2{
+from{transform:translateY(0);}
+to{transform:translateY(-30px);}
+}
 
-    h1 {
-      font-size: 2.4rem;
-      margin-bottom: 20px;
-      color: #e0c2ff;
-      text-shadow: 0 0 12px #9b59b6;
-    }
+.container{
+width:100%;
+max-width:500px;
+padding:30px 20px;
+}
 
-    .info-box {
-      border: 1px solid #9b59b6;
-      border-radius: 14px;
-      padding: 14px;
-      margin: 20px 0;
-      background: rgba(155, 89, 182, 0.1);
-      box-shadow: 0 0 20px rgba(155,89,182,0.4);
-      font-size: 1.1rem;
-    }
 
-    .link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      background: rgba(0,0,0,0.6);
-      border: 2px solid #9b59b6;
-      color: #d6b3ff;
-      padding: 16px;
-      margin: 16px 0;
-      font-size: 1.2rem;
-      border-radius: 16px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
+.logo{
+text-align:center;
+margin-bottom:28px;
+}
 
-    .link::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, transparent, rgba(155,89,182,0.4), transparent);
-      transform: translateX(-100%);
-      transition: 0.6s;
-    }
+.logo img{
+width:140px;
+border-radius:24px;
+box-shadow:0 10px 35px rgba(155,89,182,0.18);
+transition:.35s;
+}
 
-    .link:hover::before {
-      transform: translateX(100%);
-    }
+.logo img:hover{
+transform:scale(1.04);
+}
 
-    .link:hover {
-      background: #9b59b6;
-      color: #000;
-      transform: scale(1.06);
-      box-shadow: 0 0 25px #9b59b6;
-    }
+h1{
+text-align:center;
+font-size:2rem;
+font-weight:700;
+margin-bottom:26px;
+color:#d7b8ff;
+letter-spacing:-0.5px;
+}
 
-    footer {
-      margin-top: 30px;
-      font-size: 0.85rem;
-      color: #888;
-    }
-  </style>
+
+.info-box{
+background:#131313;
+padding:16px 20px;
+border-radius:20px;
+margin-bottom:16px;
+font-size:1rem;
+font-weight:600;
+border:1px solid rgba(255,255,255,0.05);
+box-shadow:0 8px 20px rgba(0,0,0,0.25);
+color:#ddd;
+}
+
+
+.link{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:18px 22px;
+margin-bottom:16px;
+background:#141414;
+border-radius:22px;
+text-decoration:none;
+color:white;
+font-size:1.05rem;
+font-weight:600;
+transition:.35s;
+border:1px solid rgba(255,255,255,0.05);
+box-shadow:0 8px 20px rgba(0,0,0,0.25);
+position:relative;
+overflow:hidden;
+}
+
+.link::before{
+content:'';
+position:absolute;
+inset:0;
+background:linear-gradient(120deg, transparent, rgba(255,255,255,0.05), transparent);
+transform:translateX(-100%);
+transition:.7s;
+}
+
+.link:hover::before{
+transform:translateX(100%);
+}
+
+.link:hover{
+transform:translateY(-4px);
+background:#1b1b1b;
+border-color:rgba(155,89,182,0.20);
+box-shadow:0 12px 30px rgba(155,89,182,0.10);
+}
+
+
+.icon{
+font-size:1.35rem;
+}
+
+.arrow{
+opacity:.45;
+font-size:1.2rem;
+}
+
+
+footer{
+text-align:center;
+margin-top:24px;
+font-size:0.85rem;
+color:#666;
+}
+
+
+@media(max-width:500px){
+h1{
+font-size:1.7rem;
+}
+
+.logo img{
+width:120px;
+}
+}
+</style>
 </head>
 
 <body>
-  <div class="container">
 
-    <div class="logo">
-      <img src="logo.png" alt="CHOWDY Logo">
-    </div>
+<div class="container">
 
-    <h1>CHOWDY Community Hub</h1>
+<div class="logo">
+<img src="logo.png" alt="CHOWDY Logo">
+</div>
 
-    <div class="info-box">
-      🔑 B-ZONE Referral: <strong>6</strong>
-    </div>
+<h1>CHOWDY Community Hub</h1>
 
-    <a class="link" href="https://www.tipeeestream.com/chowdy61/donation" target="_blank">
-      💖 Susține proiectul
-    </a>
+<div class="info-box">
+🔑 B-ZONE Referral: <strong>6</strong>
+</div>
 
-    <a class="link" href="https://discord.gg/kEesdTmH5s" target="_blank">
-      💬 Discord Community
-    </a>
+<a class="link" href="https://www.tipeeestream.com/chowdy61/donation" target="_blank">
+<span><span class="icon">💖</span> Susține proiectul</span>
+<span class="arrow">→</span>
+</a>
 
-    <a class="link" href="https://www.tiktok.com/@chowdy001" target="_blank">
-      🎵 TikTok
-    </a>
+<a class="link" href="https://discord.gg/kEesdTmH5s" target="_blank">
+<span><span class="icon">💬</span> Discord Community</span>
+<span class="arrow">→</span>
+</a>
 
-    <div class="info-box">
-      RevTag: <strong>mrg15</strong>
-    </div>
+<a class="link" href="https://www.tiktok.com/@chowdy001" target="_blank">
+<span><span class="icon">🎵</span> TikTok</span>
+<span class="arrow">→</span>
+</a>
 
-    <footer>
-      © 2025 CHOWDY • All rights reserved
-    </footer>
-  </div>
+<div class="info-box">
+RevTag: <strong>mrg15</strong>
+</div>
+
+<footer>
+© 2025 CHOWDY
+</footer>
+
+</div>
+
 </body>
-
